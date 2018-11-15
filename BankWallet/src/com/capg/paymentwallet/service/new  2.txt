@@ -1,0 +1,15 @@
+help developers create large-scale, multi-tiered, scalable, reliable, and secure network applications
+
+useful for large corporations, agencies, and governments
+
+
+ Java EE platform is designed to reduce the complexity of enterprise application 
+ development by providing a development model, API, and runtime environment that allows developers 
+ to concentrate on functionality.
+ 
+  multi-tiered applications have a 
+  client tier, 
+  a middle tier, and 
+  a data tier
+  
+  Java EE application development concentrates on the middle tier
