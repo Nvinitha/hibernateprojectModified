@@ -46,8 +46,25 @@ public class AccountServiceImpl implements IAccountService{
                 }
                                 
                 }
+                
+                public boolean fundAccValidation(AccountBean transferingAccountBean, AccountBean beneficiaryAccountBean)
+                {
+                	if(transferingAccountBean.getAccountId() != beneficiaryAccountBean.getAccountId())
+                	{
+                		System.out.println("transferingAccountBean :"+transferingAccountBean.getAccountId());
+                		System.out.println("beneficiaryAccountBean :"+beneficiaryAccountBean.getAccountId());
+                		return true;
+                	}
+                	else
+                	{
+                		return false;
+                	}
+                }
+                
                 @Override
-                public boolean fundTransfer(AccountBean transferingAccountBean,AccountBean beneficiaryAccountBean, double transferAmount) throws Exception {
+                public boolean fundTransfer(AccountBean transferingAccountBean,AccountBean beneficiaryAccountBean, double transferAmount) throws Exception 
+                {
+                	
                                 if(transferingAccountBean.getBalance()>transferAmount)
                                 {
                                 transferingAccountBean.setBalance(transferingAccountBean.getBalance()-transferAmount);
@@ -57,11 +74,13 @@ public class AccountServiceImpl implements IAccountService{
                                 boolean result1=dao.updateAccount(transferingAccountBean);
                                 boolean result2=dao.updateAccount(beneficiaryAccountBean);
                                 return result1 && result2;
-                }
+                                }
                                 else
                                 {
                                                 throw new CustomerException(CustomerExceptionMessage.BALERROR);
                                 }
+                	
+                	
 
                 }
 
@@ -181,15 +200,15 @@ public class AccountServiceImpl implements IAccountService{
                 
                                 if(g.equals("F"))
                                 {
-                                                return "Mrs";
+                                 return "Mrs";
                                 }
-                                else if(g.equals("M"))
-                                {
-                                return "Ms" ;
+                                
+                                return "Mr" ;
+                                
                                 
                 }
-                                return null;
-}
+                              
+
 
 
 				@Override

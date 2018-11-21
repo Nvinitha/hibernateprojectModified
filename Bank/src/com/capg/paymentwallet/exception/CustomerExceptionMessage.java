@@ -15,6 +15,7 @@ public class CustomerExceptionMessage extends CustomerException{
 	public static final String ADRERROR = "Address should not be null";
 	public static final String ERROR = "Please Enter Valid Details";
 	public static final String ACCERROR = "Account number does not exist";
+	public static final String FUNDACCERROR = "Both Account numbers should not be same";
 
 	
 	

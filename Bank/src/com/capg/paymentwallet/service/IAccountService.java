@@ -20,7 +20,7 @@ public interface IAccountService {
 		public String gender(String string);
 		public List<String> getOperations();
          
-		 
+		public boolean fundAccValidation(AccountBean transferingAccountBean, AccountBean beneficiaryAccountBean);
           
 	
 }

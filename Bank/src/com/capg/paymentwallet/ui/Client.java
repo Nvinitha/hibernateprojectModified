@@ -264,6 +264,8 @@ public class Client {
                                 System.out.println(accountBean.getCustomerBean());
                                 System.out.println("Your balance is: " +balance);
                                 
+                                System.out.println("account bean in show balance  " + accountBean);
+                                
                                                 
                                 
                 }
@@ -350,18 +352,27 @@ public class Client {
                                 int srcAccId=scanner.nextInt();
                                 //IAccountService service1 =new AccountServiceImpl();
                                 AccountBean accountBean1=service.findAccount(srcAccId);
-                                String g=accountBean.getCustomerBean().getGender();
-                                String gender=service.gender(g);
-                                                                System.out.println( gender+"." +"Name: "+accountBean.getCustomerBean().getFirstName());
-                                System.out.println("Current Balance is: "+accountBean.getBalance());
+                                
+                               /* String g=accountBean.getCustomerBean().getGender();
+                                String gender=service.gender(g);*/
+                                                               // System.out.println( /*gender*/"Ms"+"." +"Name: "+accountBean.getCustomerBean().getFirstName());
+                              // System.out.println("Account bean in fund transfer  " + accountBean1);
+                                
+                                System.out.println("Current Balance is: "+accountBean1.getBalance());
                                 
                                 System.out.println("Enter Account ID to Transfer Money to");
                                 int targetAccId=scanner.nextInt();
                 
                                 
+                                
                                 AccountBean accountBean2=service.findAccount(targetAccId);
-                                System.out.println("Name: "+accountBean.getCustomerBean().getFirstName());
-                                System.out.println("Current Balance is: "+accountBean.getBalance());
+                                
+                                
+                            if(    service.fundAccValidation(accountBean1, accountBean2))
+                            {
+                                
+                               /* System.out.println("Name: "+accountBean.getCustomerBean().getFirstName());*/
+                               System.out.println("Current Balance is: "+accountBean2.getBalance());
                                 
                                 System.out.println("Enter amount that you want to transfer");
                                 double transferAmt=scanner.nextDouble();
@@ -391,7 +402,7 @@ public class Client {
                                 }else{
                                                 System.out.println("Transfering Money from Account Failed ");
                                 }
-                                
+                            }       
                 }
                 
                 
